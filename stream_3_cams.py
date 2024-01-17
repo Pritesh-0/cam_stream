@@ -35,7 +35,7 @@ while True:
 
         _, buffer_from_first = cv2.imencode('.jpg', frame_from_first)
         _, buffer_from_second = cv2.imencode('.jpg', frame_from_second)
-        _, buffer_from_second = cv2.imencode('.jpg', frame_from_third)
+        _, buffer_from_third = cv2.imencode('.jpg', frame_from_third)
         
         footage_socket_1.send(buffer_from_first)
         footage_socket_2.send(buffer_from_second)
