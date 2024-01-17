@@ -95,5 +95,3 @@ def graph(simg):
     mng = plt.get_current_fig_manager()
     mng.full_screen_toggle()
     plt.show()
-
-graph('sample1.png')
