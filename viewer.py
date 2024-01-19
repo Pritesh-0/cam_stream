@@ -30,7 +30,7 @@ while True:
         if k%256==27:
             break
         elif k%256 == 32:
-            img_name="sample{}.png".format(count)
+            img_name="samples/{}.png".format(count)
             cv2.imwrite(img_name,source)
             count+=1
             graph(img_name)
