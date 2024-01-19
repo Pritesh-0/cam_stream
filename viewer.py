@@ -4,6 +4,7 @@ import argparse
 import numpy as np
 #matplotlib.use('TkAgg')
 from spect import graph
+import datetime
 
 args = argparse.ArgumentParser()
 args.add_argument("-i", "--ip", type=str, default="192.168.1.99",
@@ -30,7 +31,7 @@ while True:
         if k%256==27:
             break
         elif k%256 == 32:
-            img_name="samples/{}.png".format(count)
+            img_name="samples/{}.png".format(datetime.datetime.now().strftime("%A-%H.%M.%S"))
             cv2.imwrite(img_name,source)
             count+=1
             graph(img_name)
