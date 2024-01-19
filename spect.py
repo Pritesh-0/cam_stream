@@ -95,3 +95,12 @@ def graph(simg):
     mng = plt.get_current_fig_manager()
     mng.full_screen_toggle()
     plt.show()
+
+if __name__ == "__main__":
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--image", type=str, default="samples/1.png",
+                    help="image to test")
+    args = vars(ap.parse_args())
+
+    graph(args["image"])
