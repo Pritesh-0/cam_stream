@@ -20,7 +20,6 @@ footage_socket = context.socket(zmq.SUB)
 footage_socket.bind('tcp://' + args["ip"] + ':' + args["port"])
 footage_socket.setsockopt_string(zmq.SUBSCRIBE, np.unicode_(''))
 
-count=1
 while True:
     try:
         frame = footage_socket.recv()
@@ -33,7 +32,6 @@ while True:
         elif k%256 == 32:
             img_name="samples/{}.png".format(datetime.datetime.now().strftime("%A-%H.%M.%S"))
             cv2.imwrite(img_name,source)
-            count+=1
             graph(img_name)
 
 
